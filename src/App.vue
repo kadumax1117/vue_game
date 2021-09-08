@@ -1,26 +1,37 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <Mondai v-bind:mondaibun="mondai1" />
+    <Contents v-bind:message="sentakusi.A" />
+    <Contents v-bind:message="sentakusi.B" />
+    <Contents v-bind:message="sentakusi.C" />
+    <Contents v-bind:message="sentakusi.D" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Mondai from "./components/Mondai2.vue";
+import Contents from "./components/Contents.vue"
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    Mondai,
+    Contents,
+  },
+  data() {
+    return {
+      mondai1:"好きな食べ物は？",
+      sentakusi:{
+        A:"おにぎり",
+        B:"パスタ",
+        C:"カレーライス",
+        D:"唐揚げ"
+      }
+      // mon1:"おにぎり",
+      // mon2:"カレー",
+      // mon3:"パスタ",
+      // mon4:"唐揚げ"
+    }
   }
-}
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
